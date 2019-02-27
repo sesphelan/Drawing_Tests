@@ -128,16 +128,16 @@
     <None Include="Assets\FRL.XR-master\FRL\IO\Examples\Teleportation\ScreenFader\Unlit Transparent HUD.shader" />
     <None Include="Assets\FRL.XR-master\FRL\Tracking\Plugins\FlatBuffers\LICENSE.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/FRL/Desktop/Sound And Color/Unity Tests/Drawing_Tests/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/FRL/Desktop/Sound_And_Color/Unity_Tests/Thesis_Tests/Drawing_Tests/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/FRL/Desktop/Sound And Color/Unity Tests/Drawing_Tests/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/FRL/Desktop/Sound_And_Color/Unity_Tests/Thesis_Tests/Drawing_Tests/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/FRL/Desktop/Sound And Color/Unity Tests/Drawing_Tests/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/FRL/Desktop/Sound_And_Color/Unity_Tests/Thesis_Tests/Drawing_Tests/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/FRL/Desktop/Sound And Color/Unity Tests/Drawing_Tests/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/FRL/Desktop/Sound_And_Color/Unity_Tests/Thesis_Tests/Drawing_Tests/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity_2018.2.13/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -338,7 +338,7 @@
       <HintPath>C:/Program Files/Unity_2018.2.13/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="FlatBuffers">
-      <HintPath>C:/Users/FRL/Desktop/Sound And Color/Unity Tests/Drawing_Tests/Assets/FRL.XR-master/FRL/Tracking/Plugins/FlatBuffers/FlatBuffers.dll</HintPath>
+      <HintPath>C:/Users/FRL/Desktop/Sound_And_Color/Unity_Tests/Thesis_Tests/Drawing_Tests/Assets/FRL.XR-master/FRL/Tracking/Plugins/FlatBuffers/FlatBuffers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>C:/Users/FRL/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
