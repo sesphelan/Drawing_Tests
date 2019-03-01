@@ -6,7 +6,7 @@ using FRL.IO;
 public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler
 {
 
-    Collider coll;
+    Collision coll;
     bool grip = false;
     public FRL.XRController XRController; 
 
@@ -48,16 +48,16 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.GetComponent<Collider>().tag == "Drawer") {
+        if (collision.gameObject.tag == "Controller") {
             coll = collision;
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    private void OnCollisionExit(Collision collision)
     {
-        if (collision.GetComponent<Collider>().tag == "Drawer") {
+        if (collision.gameObject.tag == "Controller") {
             coll = null;
         }
     }
