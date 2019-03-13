@@ -23,9 +23,12 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler
     public void OnPointerTriggerPressDown(XREventData eventData)
     {
         //This will only be called when the object is being pointed at by a controller.
+        //print("trigger");
         if(coll != null) {
+            //print("TRIGGER");
             if(grip == false) {
                 grip = true;
+                print("GRIP");
                 pickUp();
             }
             else {
@@ -46,18 +49,24 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler
     {
         gameObject.transform.SetParent(null);
         gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        //gameObject.GetComponent<Rigidbody>().useGravity = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Controller") {
+            //print("COLLISION");
             coll = collision;
+        }
+        else {
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Controller") {
+            //print("COLLISION EXIT");
             coll = null;
         }
     }
