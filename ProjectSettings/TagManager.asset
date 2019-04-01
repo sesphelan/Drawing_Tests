@@ -8,6 +8,11 @@ TagManager:
   - Drawer
   - Controller
   - brushStroke
+  - Bedroom
+  - chooseSphere
+  - chooseCube
+  - choosePink
+  - chooseBlue
   layers:
   - Default
   - TransparentFX

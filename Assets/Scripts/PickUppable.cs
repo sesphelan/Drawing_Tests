@@ -8,7 +8,8 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler
 
     Collision coll;
     bool grip = false;
-    public FRL.XRController XRController; 
+    public FRL.XRController XRController;
+    public GameObject bedroom;
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +18,7 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler
 	
 	// Update is called once per frame
 	void Update () {
-		
+     
 	}
 
     public void OnPointerTriggerPressDown(XREventData eventData)
@@ -41,15 +42,16 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler
     
     public void pickUp()
     {
+        
         gameObject.transform.SetParent(XRController.transform);
-        gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        XRController.transform.GetChild(0).GetComponent<Collider>().enabled = false;
     }
 
     public void release()
     {
-        gameObject.transform.SetParent(null);
-        gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        //gameObject.GetComponent<Rigidbody>().useGravity = false;
+        gameObject.transform.SetParent(bedroom.transform);
+        XRController.transform.GetChild(0).GetComponent<Collider>().enabled = true;
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -59,7 +61,7 @@ public class PickUppable : MonoBehaviour, IPointerTriggerPressDownHandler
             coll = collision;
         }
         else {
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+             gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 
