@@ -9,7 +9,7 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
     public GameObject sphere;
     public GameObject cube;
 
-    private bool objectSelected = false;
+    private static bool objectSelected = false;
 
     void Start()
     {
@@ -25,15 +25,14 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
     private GameObject setModel(GameObject chalk, GameObject shape)
     {
         chalk.GetComponent<CreateObject>().modelObject = shape;
-        objectSelected = true;
         return chalk;
     } 
 
-    private GameObject changeParams(GameObject obj, string tag, string color, string name)
+    private GameObject changeParams(GameObject obj, string tag, string color)
     {
         obj.GetComponentInChildren<Text>().text = color;
         obj.tag = tag;
-        obj.name = name;
+        obj.name = tag;
         return obj;
     }
 
@@ -54,19 +53,22 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
     public void OnPointerTriggerPressDown(XREventData eventData)
     {
         GameObject chalk = GameObject.FindGameObjectWithTag("Drawer");
-        if (!objectSelected) { // CHOOSE TYPE OF SHAPE TO DRAW FIRST
+        if (objectSelected == false) { // CHOOSE TYPE OF SHAPE TO DRAW FIRST
+            print("hi");
+            print(objectSelected);
             if (gameObject.tag == "chooseSphere") {
                 print("Chosen Sphere");
                 chalk = setModel(chalk, sphere);
             }
-            if (gameObject.tag == "chooseCube") {
+            else if (gameObject.tag == "chooseCube") {
                 print("Chosen Cube");
                 chalk = setModel(chalk, cube);
             }
             GameObject obj1 = GameObject.FindGameObjectWithTag("chooseSphere");
             GameObject obj2 = GameObject.FindGameObjectWithTag("chooseCube");
-            obj1 = changeParams(obj1, "chooseBlue", "Blue", "chooseBlue");
-            obj2 = changeParams(obj2, "choosePink", "Pink", "choosePink");
+            obj1 = changeParams(obj1, "chooseBlue", "Blue");
+            obj2 = changeParams(obj2, "choosePink", "Pink");
+            objectSelected = true;
         }
         else { // THEN CHOOSE COLOR OF SHAPE
             Renderer chalkRender = chalk.AddComponent<MeshRenderer>();
@@ -83,6 +85,9 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
             GameObject obj2 = GameObject.FindGameObjectWithTag("choosePink");
             obj1.SetActive(false);
             obj2.SetActive(false);
+
+            GameObject leftController = GameObject.FindGameObjectWithTag("leftController");
+            leftController.GetComponent<LineRenderer>().enabled = false;
         }
     }
 }
