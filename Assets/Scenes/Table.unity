@@ -564,6 +564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphere: {fileID: 0}
   cube: {fileID: 1412802345213539060, guid: 16300461cd3ed9c4da87fbb4b3f287dd, type: 3}
+  circle: {fileID: 1972018520, guid: 6a79afcc90632a2408dd5bc69b8759b9, type: 3}
+  square: {fileID: 4170499554854209318, guid: c1a5785aa22dbf547b80f0e69702519c, type: 3}
 --- !u!1 &191957256 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1700621464810110, guid: c967f388f569e8f43bd0f12d08e12a56,
@@ -1183,6 +1185,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphere: {fileID: 3126282493800683155, guid: 05e1ebafcba82c54597b43ef956d6659, type: 3}
   cube: {fileID: 0}
+  circle: {fileID: 1972018520, guid: 6a79afcc90632a2408dd5bc69b8759b9, type: 3}
+  square: {fileID: 4170499554854209318, guid: c1a5785aa22dbf547b80f0e69702519c, type: 3}
 --- !u!1 &1704497066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,12 +1388,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998738480}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef9ec82b3771d1f4a994d26460607678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brushStroke: {fileID: 1554633980294935572, guid: 59eefd419e308ab4dac90989009ff3b6,
+  brushStroke: {fileID: 6013134241247964705, guid: f1aa539e67fc5e441898c7e663587628,
     type: 3}
   modelObject: {fileID: 3126282493800683155, guid: 05e1ebafcba82c54597b43ef956d6659,
     type: 3}

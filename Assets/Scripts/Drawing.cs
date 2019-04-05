@@ -29,8 +29,8 @@ public class Drawing : MonoBehaviour
     {
             
         GameObject obj = Instantiate(brushStroke);
-        obj.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        obj.transform.position = collision.contacts[0].point - new Vector3(0f, 0.2f, 0);
+        obj.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
+        obj.transform.position = collision.contacts[0].point + new Vector3(0f, 0.075f, 0);
 
         gameObject.transform.position = obj.transform.position;
 

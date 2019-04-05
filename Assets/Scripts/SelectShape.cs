@@ -8,8 +8,12 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
     // Start is called before the first frame update
     public GameObject sphere;
     public GameObject cube;
+    public GameObject circle;
+    public GameObject square;
 
     private static bool objectSelected = false;
+
+    private static bool drawCircle = false;
 
     void Start()
     {
@@ -50,6 +54,25 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
         return rend;
     }
 
+    private void cleanUp()
+    {
+        GameObject obj1 = GameObject.FindGameObjectWithTag("chooseBlue");
+        GameObject obj2 = GameObject.FindGameObjectWithTag("choosePink");
+        obj1.SetActive(false);
+        obj2.SetActive(false);
+
+        GameObject leftController = GameObject.FindGameObjectWithTag("leftController");
+        leftController.GetComponent<LineRenderer>().enabled = false;
+
+        GameObject controller = GameObject.FindGameObjectWithTag("Controller");
+        controller.GetComponent<Drawing>().enabled = true;
+
+        gameObject.GetComponent<SelectShape>().enabled = false;
+
+        GameObject leftContr = GameObject.FindGameObjectWithTag("leftController");
+        leftContr.GetComponent<LineRenderer>().enabled = false;
+    }
+
     public void OnPointerTriggerPressDown(XREventData eventData)
     {
         GameObject chalk = GameObject.FindGameObjectWithTag("Drawer");
@@ -59,11 +82,13 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
             if (gameObject.tag == "chooseSphere") {
                 print("Chosen Sphere");
                 chalk = setModel(chalk, sphere);
+                drawCircle = true;
             }
             else if (gameObject.tag == "chooseCube") {
                 print("Chosen Cube");
                 chalk = setModel(chalk, cube);
             }
+
             GameObject obj1 = GameObject.FindGameObjectWithTag("chooseSphere");
             GameObject obj2 = GameObject.FindGameObjectWithTag("chooseCube");
             obj1 = changeParams(obj1, "chooseBlue", "Blue");
@@ -81,13 +106,13 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
                 chalkRender = chooseColor(chalkRender, "blue");
             }
 
-            GameObject obj1 = GameObject.FindGameObjectWithTag("chooseBlue");
-            GameObject obj2 = GameObject.FindGameObjectWithTag("choosePink");
-            obj1.SetActive(false);
-            obj2.SetActive(false);
+            if (drawCircle)
+                Instantiate(circle);
+            else
+                Instantiate(square);
 
-            GameObject leftController = GameObject.FindGameObjectWithTag("leftController");
-            leftController.GetComponent<LineRenderer>().enabled = false;
+            cleanUp();
+            
         }
     }
 }
