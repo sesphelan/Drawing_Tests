@@ -31,30 +31,32 @@ public class LineRendering : MonoBehaviour {
     {
         
         LineRenderer lr = gameObject.GetComponent<LineRenderer>();
-        lr.SetPosition(0, gameObject.transform.position);
-        lr.SetPosition(1, gameObject.transform.forward*-20 + transform.position);
+        if(lr.enabled == true) {
+            lr.SetPosition(0, gameObject.transform.position);
+            lr.SetPosition(1, gameObject.transform.forward * -20 + transform.position);
 
-        RaycastHit hit;
-        if(Physics.Raycast (gameObject.transform.position, (gameObject.transform.forward * -20 + transform.position)- gameObject.transform.position, out hit)) {
-            if(hit.transform.gameObject.layer == 5) { // IF IT HITS A UI BUTTON 
-                turnRed(hit.transform.gameObject.GetComponent<Button>());
-            }
-            
-        }
-        else {
-            GameObject[] buttons = new GameObject[4];
-            buttons[0] = GameObject.FindGameObjectWithTag("chooseCube");
-            buttons[1] = GameObject.FindGameObjectWithTag("chooseSphere");
-            buttons[2] = GameObject.FindGameObjectWithTag("choosePink");
-            buttons[3] = GameObject.FindGameObjectWithTag("chooseBlue");
-
-            for(int i = 0; i < buttons.Length; i++) {
-                GameObject button = buttons[i];
-                if(button != null) {
-                    turnWhite(button.GetComponent<Button>());
+            RaycastHit hit;
+            if (Physics.Raycast(gameObject.transform.position, (gameObject.transform.forward * -20 + transform.position) - gameObject.transform.position, out hit)) {
+                if (hit.transform.gameObject.layer == 5) { // IF IT HITS A UI BUTTON 
+                    turnRed(hit.transform.gameObject.GetComponent<Button>());
                 }
-            }
 
+            }
+            else {
+                GameObject[] buttons = new GameObject[4];
+                buttons[0] = GameObject.FindGameObjectWithTag("chooseCube");
+                buttons[1] = GameObject.FindGameObjectWithTag("chooseSphere");
+                buttons[2] = GameObject.FindGameObjectWithTag("choosePink");
+                buttons[3] = GameObject.FindGameObjectWithTag("chooseBlue");
+
+                for (int i = 0; i < buttons.Length; i++) {
+                    GameObject button = buttons[i];
+                    if (button != null) {
+                        turnWhite(button.GetComponent<Button>());
+                    }
+                }
+
+            }
         }
     }
 }

@@ -22,7 +22,7 @@ public class CreateObject : MonoBehaviour, IPointerTriggerPressDownHandler {
     public void OnPointerTriggerPressDown(XREventData eventData)
     {
         
-        if(GameObject.FindGameObjectsWithTag("brushStroke") != null && gameObject.transform.parent.tag == "Bedroom") {
+        if(GameObject.FindGameObjectsWithTag("brushStroke").Length > 0) {
 
              GameObject chalk = GameObject.FindGameObjectWithTag("Drawer");
              Renderer rend2 = chalk.GetComponent<Renderer>(); 

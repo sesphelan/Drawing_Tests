@@ -7,9 +7,8 @@ public class Drawing : MonoBehaviour
 {
     public GameObject brushStroke;
     public GameObject modelObject;
-	// Use this for initialization
+    // Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -19,7 +18,7 @@ public class Drawing : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Canvas" && gameObject.transform.childCount > 2) {
+        if (collision.gameObject.tag == "Canvas" && gameObject.GetComponent<FixedJoint>()) {
             draw(collision);
         }
         
@@ -30,7 +29,7 @@ public class Drawing : MonoBehaviour
             
         GameObject obj = Instantiate(brushStroke);
         obj.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
-        obj.transform.position = collision.contacts[0].point + new Vector3(0f, 0.075f, 0);
+        obj.transform.position = collision.contacts[0].point + new Vector3(0f, 0.067f, 0);
 
         gameObject.transform.position = obj.transform.position;
 
@@ -44,7 +43,7 @@ public class Drawing : MonoBehaviour
 
     public void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag == "Canvas" && gameObject.transform.childCount > 2) {
+        if (collision.gameObject.tag == "Canvas" && gameObject.GetComponent<FixedJoint>()) {
             draw(collision);
         }
     }

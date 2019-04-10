@@ -28,7 +28,7 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
 
     private GameObject setModel(GameObject chalk, GameObject shape)
     {
-        chalk.GetComponent<CreateObject>().modelObject = shape;
+        chalk.GetComponent<PickUppable>().modelObject = shape;
         return chalk;
     } 
 
@@ -69,8 +69,8 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
 
         gameObject.GetComponent<SelectShape>().enabled = false;
 
-        GameObject leftContr = GameObject.FindGameObjectWithTag("leftController");
-        leftContr.GetComponent<LineRenderer>().enabled = false;
+        LineRenderer lr= GameObject.FindGameObjectWithTag("leftController").GetComponent<LineRenderer>();
+        lr.enabled = false;
     }
 
     public void OnPointerTriggerPressDown(XREventData eventData)
@@ -112,6 +112,7 @@ public class SelectShape : MonoBehaviour, IPointerTriggerPressDownHandler {
                 Instantiate(square);
 
             cleanUp();
+            this.enabled = false;
             
         }
     }

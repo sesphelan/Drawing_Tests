@@ -307,6 +307,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.45
       objectReference: {fileID: 0}
+    - target: {fileID: 1700621464810110, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
+      propertyPath: m_TagString
+      value: leftController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729993067217420, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
+      propertyPath: m_TagString
+      value: Controller
+      objectReference: {fileID: 0}
     - target: {fileID: 4763491017835498, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4.95
@@ -314,19 +322,6 @@ PrefabInstance:
     - target: {fileID: 4439015271280444, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
       propertyPath: m_LocalPosition.y
       value: -4.9609995
-      objectReference: {fileID: 0}
-    - target: {fileID: 1729993067217420, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
-      propertyPath: m_TagString
-      value: Controller
-      objectReference: {fileID: 0}
-    - target: {fileID: 114699245685905298, guid: c967f388f569e8f43bd0f12d08e12a56,
-        type: 3}
-      propertyPath: interactDistance
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1700621464810110, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
-      propertyPath: m_TagString
-      value: leftController
       objectReference: {fileID: 0}
     - target: {fileID: 4575795411185442, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
       propertyPath: m_LocalPosition.y
@@ -339,6 +334,11 @@ PrefabInstance:
     - target: {fileID: 4575795411185442, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114699245685905298, guid: c967f388f569e8f43bd0f12d08e12a56,
+        type: 3}
+      propertyPath: interactDistance
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c967f388f569e8f43bd0f12d08e12a56, type: 3}
@@ -1286,6 +1286,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   XRController: {fileID: 1998738483}
   bedroom: {fileID: 1341464963}
+  modelObject: {fileID: 0}
+--- !u!54 &1845629518
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845629515}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1845629521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1326,7 +1343,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892353750}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1340,6 +1357,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 107396729}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1998738481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998738480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9ec82b3771d1f4a994d26460607678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brushStroke: {fileID: 1705696792332461550, guid: 59eefd419e308ab4dac90989009ff3b6,
+    type: 3}
+  modelObject: {fileID: 3126282493800683155, guid: 05e1ebafcba82c54597b43ef956d6659,
+    type: 3}
 --- !u!114 &1998738483 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114810220988355272, guid: c967f388f569e8f43bd0f12d08e12a56,
@@ -1381,19 +1414,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!114 &1998738486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998738480}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9ec82b3771d1f4a994d26460607678, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brushStroke: {fileID: 6013134241247964705, guid: f1aa539e67fc5e441898c7e663587628,
-    type: 3}
-  modelObject: {fileID: 3126282493800683155, guid: 05e1ebafcba82c54597b43ef956d6659,
-    type: 3}
